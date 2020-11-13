@@ -11,17 +11,16 @@ use App\Mail\Mail as Mailing;
 
 class MailController extends AbstractController {
     public function send() {
+        // authenticated
+        $user = $this->isAuthorized();
+        if (!$user) {
+            return $this->response(['message' => 'unauthorized'], 401);
+        }
 
         // validate serializer
         $data = $this->serializer($this->request());
         if (!$this->is_valid) {
             return $this->response(['message' => 'subject and body are required']);
-        }
-
-        // authenticated
-        $user = $this->isAuthorized();
-        if (!$user) {
-            return $this->response(['message' => 'unauthorized'], 401);
         }
 
         // save email and send mail
@@ -31,7 +30,7 @@ class MailController extends AbstractController {
         ]);
 
         $mailing = new Mailing();
-        $mailing->send('admin@gmail.com', $user->email, $mail->title, $mail->body);
+        $mailing->send(MAIL_ADMIN, $user->email, $mail->title, $mail->body);
         return $this->response(
             ['message' => 'success send mail to: ' . $user->email], 
             201

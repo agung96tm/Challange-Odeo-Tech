@@ -22,9 +22,14 @@ This project is a form of accepting a challange from Odeo Tech to make a REST AP
     ```docker
     docker-compose up -d
     ```
+ * Run migration:
+    ```php
+    php bin/console migrate
+    ```
+
  * Create new user:
     ```php
-    php bin/console create:user <email> <name> <password>
+    php bin/console create:user <your_email> <your_name> <your_password>
     ```
 
  * Serving Application:

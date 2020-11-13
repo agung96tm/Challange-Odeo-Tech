@@ -13,3 +13,4 @@ define("MAIL_HOST", "smtp.mailtrap.io");
 define("MAIL_USERNAME", "42730f78202ad6");
 define("MAIL_PASSWORD", "116fcda2659b10");
 define("MAIL_PORT", 2525);
+define('MAIL_ADMIN', 'slash@example.com');
