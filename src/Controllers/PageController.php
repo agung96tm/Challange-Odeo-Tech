@@ -1,9 +1,15 @@
 <?php
+
 namespace App\Controllers;
 
-class PageController {
+
+use App\Core\Controllers\AbstractController;
+
+
+class PageController extends AbstractController {
     public function home() {
-        echo 'home';
-        return;
+        return $this->response([
+            'ping' => 'pong',
+        ]);
     }
 }
