@@ -69,7 +69,8 @@ This is a list of api's:
       ```json
     {
         "Authorization": "application/json",
-        "Accept": "application/json"
+        "Accept": "application/json",
+        "Authorization": "r4nd0m111"
     }
     ```
     request body:
@@ -77,5 +78,12 @@ This is a list of api's:
       {
           "title": "Hi There",
           "body": "Welcome to the jungle Baby !!!- Axl Rose"
+      }
+    ```
+
+    response:  
+      ```json
+      {
+          "message": "success send mail to: andre@gmail.com"
       }
     ```
