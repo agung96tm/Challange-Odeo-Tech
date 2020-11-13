@@ -1,6 +1,8 @@
 <?php
 namespace App\Core;
 
+use Ramsey\Uuid\Uuid;
+
 class Random {
     public static function random_str($length=6, $char = 'abcdefghijklmnopqrstuvwxyz') {
         $pos = strlen($char);
@@ -14,5 +16,9 @@ class Random {
         }
 
         return $text;
+    }
+
+    public static function uuid() {
+        return Uuid::uuid4()->toString();
     }
 }

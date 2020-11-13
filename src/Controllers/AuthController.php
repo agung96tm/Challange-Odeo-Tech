@@ -3,6 +3,7 @@ namespace App\Controllers;
 
 use App\Databases\Models\User;
 use App\Core\Auth\Controllers\AbstractAuthController;
+use App\Core\Random;
 
 
 class AuthController extends AbstractAuthController {
@@ -17,7 +18,7 @@ class AuthController extends AbstractAuthController {
         if ($user && $user->check_password($data['password'])) {
             // generate random token used for logged-in (authorized)
             $result = $user->tokens()->create([
-                'token' => $this->random(6),
+                'token' => Random::uuid(),
             ]);
             return $this->response(['token' => $result->token]);
         }

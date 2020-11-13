@@ -13,7 +13,8 @@
         "symfony/console": "^5.1",
         "phpmailer/phpmailer": "^6.1",
         "illuminate/queue": "^8.14",
-        "predis/predis": "^1.1"
+        "predis/predis": "^1.1",
+        "ramsey/uuid": "^4.1"
     },
     "autoload": {
         "psr-4": {

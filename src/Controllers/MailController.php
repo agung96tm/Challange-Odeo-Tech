@@ -15,7 +15,7 @@ class MailController extends AbstractController {
         // validate serializer
         $data = $this->serializer($this->request());
         if (!$this->is_valid) {
-            return $this->response(['message' => 'subject and body is required']);
+            return $this->response(['message' => 'subject and body are required']);
         }
 
         // authenticated
